@@ -23,25 +23,25 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing dependencies...'
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'npm test'
+                bat 'npm test'
             }
             post {
                 always {
-                    echo 'Publishing code coverage results...'
+                    echo 'Publibating code coverage results...'
                    
                 }
             }
